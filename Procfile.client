@@ -1,0 +1,1 @@
+web: SERVER_END_POINT=https://next-fast-server.herokuapp.com yarn start:client

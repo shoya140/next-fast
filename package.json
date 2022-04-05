@@ -11,7 +11,7 @@
     "start:server": "uvicorn main:app --app-dir=server",
     "lint": "next lint",
     "fmt": "prettier --write 'pages/**/*.js' 'styles/**/*.scss' '*.{js, json}'",
-    "pip": "pip install -r server/requirements.txt"
+    "pip": "pip install -r requirements.txt"
   },
   "dependencies": {
     "axios": "^0.26.1",

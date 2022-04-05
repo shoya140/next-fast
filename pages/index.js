@@ -5,12 +5,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 
+const serverEndPoint = process.env.SERVER_END_POINT
+  ? process.env.SERVER_END_POINT
+  : 'http://localhost:8000'
+
 export default function Home() {
   const [serverStatus, setServerStatus] = useState('Not checked')
 
   const checkServerStatus = () => {
     axios
-      .get('http://localhost:8000')
+      .get(serverEndPoint)
       .then((response) => {
         setServerStatus(JSON.stringify(response.data))
       })
@@ -37,7 +41,9 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
-        <p>Server Status: {serverStatus}</p>
+        <p>
+          Status of <b>{serverEndPoint}</b>: {serverStatus}
+        </p>
         <button onClick={checkServerStatus}>Check Server Status</button>
 
         <div className={styles.grid}>
