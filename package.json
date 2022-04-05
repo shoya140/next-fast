@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "run-p dev:client dev:server",
     "dev:client": "next dev",
-    "dev:server": "uvicorn main:app --app-dir=server --reload",
+    "dev:server": "uvicorn main:app --app-dir=backend --reload",
     "start": "run-p start:client start:server",
     "start:client": "next build && next start",
-    "start:server": "uvicorn main:app --app-dir=server",
+    "start:server": "uvicorn main:app --app-dir=backend",
     "lint": "next lint",
     "fmt": "prettier --write 'pages/**/*.js' 'styles/**/*.scss' '*.{js, json}'",
     "pip": "pip install -r requirements.txt"

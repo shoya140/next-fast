@@ -5,8 +5,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 
-const serverEndPoint = process.env.SERVER_END_POINT
-  ? process.env.SERVER_END_POINT
+const backendURL = process.env.BACKEND_URL
+  ? process.env.BACKEND_URL
   : 'http://localhost:8000'
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
 
   const checkServerStatus = () => {
     axios
-      .get(serverEndPoint)
+      .get(backendURL)
       .then((response) => {
         setServerStatus(JSON.stringify(response.data))
       })
@@ -42,7 +42,7 @@ export default function Home() {
         </p>
 
         <p>
-          Status of <b>{serverEndPoint}</b>: {serverStatus}
+          Status of <b>{backendURL}</b>: {serverStatus}
         </p>
         <button onClick={checkServerStatus}>Check Server Status</button>
 

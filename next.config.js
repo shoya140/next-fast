@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    SERVER_END_POINT: process.env.SERVER_END_POINT,
+    BACKEND_URL: process.env.BACKEND_URL,
   }
 }
 
